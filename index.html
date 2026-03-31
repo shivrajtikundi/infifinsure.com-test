@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INFI FINSURE – Smart Insurance & Fintech Solutions</title>
+<meta name="description" content="INFI FINSURE offers Life, Health and Motor Insurance plans powered by fintech. Get instant quotes, fast claims and 24/7 support. Contact Ravi Aralikatti at 9241414242, Yelchenahalli, Bangalore.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{--brand:#E8400A;--brand2:#FF6B35;--dark:#0D0D0D;--light:#F9F6F1;--text:#1A1A1A;--muted:#666;--white:#fff;--card-r:16px}
+  html{scroll-behavior:smooth}
+  body{font-family:'DM Sans',sans-serif;background:var(--light);color:var(--text);overflow-x:hidden}
+  h1,h2,h3,h4{font-family:'Syne',sans-serif}
+
+  /* NAV */
+  nav{background:var(--dark);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:68px;position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,0.3)}
+  .logo-wrap{display:flex;align-items:center;gap:12px;text-decoration:none}
+  .logo-icon{width:40px;height:40px;border-radius:10px;background:var(--brand);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .logo-text{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:#fff;letter-spacing:-0.3px;line-height:1}
+  .logo-text span{color:var(--brand2)}
+  .logo-sub{font-size:10px;color:rgba(255,255,255,0.4);letter-spacing:1.5px;font-weight:500;margin-top:2px}
+  .nav-links{display:flex;gap:2rem;list-style:none}
+  .nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:14px;font-weight:500;transition:color 0.2s}
+  .nav-links a:hover{color:#fff}
+  .nav-cta{background:var(--brand);color:#fff;border:none;padding:10px 22px;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;cursor:pointer;transition:background 0.2s;text-decoration:none;display:inline-block}
+  .nav-cta:hover{background:var(--brand2)}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+  .nav-toggle span{width:24px;height:2px;background:#fff;border-radius:2px;transition:all 0.3s}
+  @media(max-width:768px){
+    .nav-links{display:none;position:absolute;top:68px;left:0;right:0;background:var(--dark);padding:1.5rem 2rem;flex-direction:column;gap:1.25rem;border-top:1px solid rgba(255,255,255,0.08)}
+    .nav-links.open{display:flex}
+    .nav-toggle{display:flex}
+    .nav-cta{display:none}
+    .hero h1{font-size:2rem}
+    .hero-stats{gap:1.5rem}
+    .calc-grid{grid-template-columns:1fr}
+    .calc-result{grid-template-columns:1fr}
+    .form-grid{grid-template-columns:1fr}
+    .footer-top{grid-template-columns:1fr}
+    .products-grid{grid-template-columns:1fr}
+    .why-grid{grid-template-columns:1fr 1fr}
+  }
+
+  /* HERO */
+  .hero{background:var(--dark);padding:5rem 2rem 4rem;position:relative;overflow:hidden}
+  .hero-accent{position:absolute;top:-80px;right:-80px;width:480px;height:480px;border-radius:50%;background:rgba(232,64,10,0.12);pointer-events:none}
+  .hero-accent2{position:absolute;bottom:-120px;left:15%;width:320px;height:320px;border-radius:50%;background:rgba(255,107,53,0.07);pointer-events:none}
+  .hero-inner{max-width:900px;margin:0 auto;position:relative}
+  .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,107,53,0.12);color:var(--brand2);font-size:12px;font-weight:500;padding:6px 14px;border-radius:20px;border:1px solid rgba(255,107,53,0.25);margin-bottom:1.5rem;letter-spacing:0.5px}
+  .badge-dot{width:6px;height:6px;border-radius:50%;background:var(--brand2);animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+  .hero h1{font-size:clamp(2.2rem,5vw,4rem);font-weight:800;color:#fff;line-height:1.1;margin-bottom:1.25rem}
+  .hero h1 span{color:var(--brand2)}
+  .hero p{font-size:17px;color:rgba(255,255,255,0.6);max-width:540px;line-height:1.7;margin-bottom:2.5rem}
+  .hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+  .btn-primary{background:var(--brand);color:#fff;border:none;padding:14px 30px;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;cursor:pointer;transition:all 0.2s;text-decoration:none;display:inline-block}
+  .btn-primary:hover{background:var(--brand2);transform:translateY(-1px)}
+  .btn-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.25);padding:14px 30px;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;cursor:pointer;transition:all 0.2s;text-decoration:none;display:inline-block}
+  .btn-outline:hover{border-color:rgba(255,255,255,0.6)}
+  .hero-stats{display:flex;gap:3rem;margin-top:3.5rem;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,0.08);flex-wrap:wrap}
+  .stat-item .num{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:#fff}
+  .stat-item .lbl{font-size:13px;color:rgba(255,255,255,0.45);margin-top:2px}
+
+  /* SECTIONS */
+  section{padding:4rem 2rem}
+  .section-inner{max-width:1100px;margin:0 auto}
+  .section-tag{display:inline-block;background:rgba(232,64,10,0.1);color:var(--brand);font-size:12px;font-weight:500;padding:5px 12px;border-radius:20px;margin-bottom:1rem;letter-spacing:0.5px}
+  .section-title{font-size:clamp(1.7rem,3vw,2.4rem);font-weight:800;margin-bottom:0.5rem;color:var(--text)}
+  .section-sub{color:var(--muted);font-size:15px;max-width:520px;line-height:1.6;margin-bottom:2.5rem}
+
+  /* PRODUCTS */
+  .products{background:#fff}
+  .products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+  .product-card{background:var(--light);border-radius:var(--card-r);padding:2rem;border:1px solid rgba(0,0,0,0.07);transition:all 0.25s;cursor:pointer;position:relative;overflow:hidden}
+  .product-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--brand)}
+  .product-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(232,64,10,0.1)}
+  .product-card:nth-child(2)::before{background:#0EA5E9}
+  .product-card:nth-child(3)::before{background:#10B981}
+  .product-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem}
+  .icon-life{background:rgba(232,64,10,0.1)}
+  .icon-health{background:rgba(14,165,233,0.1)}
+  .icon-motor{background:rgba(16,185,129,0.1)}
+  .product-card h3{font-size:18px;font-weight:700;margin-bottom:0.5rem}
+  .product-card p{font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:1.25rem}
+  .feature-list{list-style:none;display:flex;flex-direction:column;gap:6px}
+  .feature-list li{font-size:13px;color:var(--text);display:flex;align-items:center;gap:8px}
+  .feature-list li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--brand);flex-shrink:0}
+  .product-card:nth-child(2) .feature-list li::before{background:#0EA5E9}
+  .product-card:nth-child(3) .feature-list li::before{background:#10B981}
+  .learn-btn{margin-top:1.5rem;font-size:13px;font-weight:500;color:var(--brand);cursor:pointer;background:none;border:none;font-family:'DM Sans',sans-serif;padding:0}
+
+  /* WHY US */
+  .why-us{background:var(--light)}
+  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem}
+  .why-card{text-align:center;padding:2rem 1rem;background:#fff;border-radius:var(--card-r);border:1px solid rgba(0,0,0,0.06)}
+  .why-icon{width:52px;height:52px;border-radius:14px;background:rgba(232,64,10,0.08);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
+  .why-card h4{font-size:15px;font-weight:700;margin-bottom:0.4rem}
+  .why-card p{font-size:13px;color:var(--muted);line-height:1.5}
+
+  /* CALCULATOR */
+  .calculator{background:var(--dark)}
+  .calculator .section-title{color:#fff}
+  .calculator .section-sub{color:rgba(255,255,255,0.5)}
+  .calculator .section-tag{background:rgba(255,107,53,0.15);color:var(--brand2)}
+  .calc-wrap{background:rgba(255,255,255,0.05);border-radius:20px;border:1px solid rgba(255,255,255,0.09);padding:2.5rem;max-width:800px}
+  .calc-tabs{display:flex;gap:8px;margin-bottom:2rem;background:rgba(255,255,255,0.06);padding:5px;border-radius:10px;width:fit-content;flex-wrap:wrap}
+  .calc-tab{padding:8px 20px;border-radius:8px;border:none;background:transparent;color:rgba(255,255,255,0.5);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;cursor:pointer;transition:all 0.2s}
+  .calc-tab.active{background:var(--brand);color:#fff}
+  .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+  .calc-field label{font-size:13px;color:rgba(255,255,255,0.55);display:block;margin-bottom:8px}
+  .calc-field input[type=range]{width:100%;accent-color:var(--brand2)}
+  .range-val{font-size:15px;font-weight:500;color:#fff;margin-bottom:6px}
+  .calc-result{background:var(--brand);border-radius:14px;padding:1.5rem 2rem;margin-top:2rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;text-align:center}
+  .res-num{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:#fff}
+  .res-lbl{font-size:12px;color:rgba(255,255,255,0.75);margin-top:3px}
+  .calc-note{font-size:12px;color:rgba(255,255,255,0.3);margin-top:1rem}
+
+  /* FORM */
+  .customer-form{background:var(--light)}
+  .form-card{background:#fff;border-radius:20px;border:1px solid rgba(0,0,0,0.08);padding:2.5rem;max-width:680px}
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+  .form-group{display:flex;flex-direction:column;gap:6px}
+  .form-group.full{grid-column:1/-1}
+  .form-group label{font-size:13px;font-weight:500;color:var(--text)}
+  .form-group input,.form-group select,.form-group textarea{padding:11px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:9px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--text);background:var(--light);outline:none;transition:border-color 0.2s}
+  .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--brand)}
+  .form-group textarea{resize:vertical;min-height:90px}
+  .submit-btn{background:var(--brand);color:#fff;border:none;padding:14px 36px;border-radius:10px;font-family:'Syne',sans-serif;font-size:15px;font-weight:700;cursor:pointer;margin-top:0.5rem;transition:all 0.2s;width:100%}
+  .submit-btn:hover{background:var(--brand2)}
+  .form-success{display:none;background:#ECFDF5;border:1px solid #A7F3D0;border-radius:12px;padding:1.25rem 1.5rem;color:#065F46;font-size:14px;margin-top:1rem;text-align:center}
+
+  /* FOOTER */
+  footer{background:var(--dark);padding:3rem 2rem 2rem}
+  .footer-inner{max-width:1100px;margin:0 auto}
+  .footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,0.08)}
+  .footer-logo-wrap{display:flex;align-items:center;gap:10px;margin-bottom:1rem;text-decoration:none}
+  .footer-logo-icon{width:36px;height:36px;border-radius:8px;background:var(--brand);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .footer-logo-text{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:#fff}
+  .footer-logo-text span{color:var(--brand2)}
+  .footer-brand-desc{font-size:13px;color:rgba(255,255,255,0.4);line-height:1.6;max-width:240px}
+  .footer-col h5{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:1rem;letter-spacing:0.5px}
+  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+  .footer-col ul li a{color:rgba(255,255,255,0.45);text-decoration:none;font-size:13px;transition:color 0.2s}
+  .footer-col ul li a:hover{color:#fff}
+  .contact-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px}
+  .contact-icon{width:28px;height:28px;border-radius:7px;background:rgba(232,64,10,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .contact-label{font-size:11px;color:rgba(255,255,255,0.35);letter-spacing:0.5px;margin-bottom:2px}
+  .contact-val{font-size:13px;color:rgba(255,255,255,0.8);font-weight:500}
+  .advisor-card{margin-top:0.75rem;padding:10px 14px;background:rgba(232,64,10,0.12);border-radius:10px;border:1px solid rgba(232,64,10,0.2)}
+  .advisor-card .advisor-tag{font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:0.5px;margin-bottom:4px}
+  .advisor-card .advisor-name{font-size:14px;color:#fff;font-weight:500;font-family:'Syne',sans-serif}
+  .advisor-card .advisor-role{font-size:12px;color:rgba(255,255,255,0.45);margin-top:2px}
+  .social-row{margin-top:1.25rem;display:flex;gap:10px}
+  .social-btn{width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,0.07);display:flex;align-items:center;justify-content:center;cursor:pointer;text-decoration:none;transition:background 0.2s}
+  .social-btn:hover{background:rgba(255,255,255,0.12)}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+  .footer-bottom p{color:rgba(255,255,255,0.3);font-size:12px}
+  .footer-links{display:flex;gap:1.5rem;flex-wrap:wrap}
+  .footer-links a{color:rgba(255,255,255,0.35);text-decoration:none;font-size:12px;transition:color 0.2s}
+  .footer-links a:hover{color:#fff}
+  .footer-disclaimer{font-size:11px;color:rgba(255,255,255,0.2);margin-top:1rem;text-align:center}
+
+  /* WHATSAPP FLOAT */
+  .whatsapp-float{position:fixed;bottom:24px;right:24px;width:54px;height:54px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,0.4);cursor:pointer;z-index:999;text-decoration:none;transition:transform 0.2s}
+  .whatsapp-float:hover{transform:scale(1.08)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#home" class="logo-wrap">
+    <div class="logo-icon">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+        <rect x="2" y="11" width="4" height="9" rx="1.5" fill="white" opacity="0.6"/>
+        <rect x="9" y="6" width="4" height="14" rx="1.5" fill="white" opacity="0.85"/>
+        <rect x="16" y="2" width="4" height="18" rx="1.5" fill="white"/>
+        <path d="M3 10 L11 5 L19 2" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div>
+      <div class="logo-text">INFI <span>FINSURE</span></div>
+      <div class="logo-sub">FINTECH SOLUTIONS</div>
+    </div>
+  </a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#products">Products</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#calc">Calculator</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Get a Quote</a>
+  <div class="nav-toggle" onclick="toggleNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="home">
+  <div class="hero-accent"></div>
+  <div class="hero-accent2"></div>
+  <div class="hero-inner">
+    <div class="hero-badge"><div class="badge-dot"></div>Trusted Fintech Insurance Partner — Since 2010</div>
+    <h1>Protecting What<br>Matters <span>Most to You</span></h1>
+    <p>Comprehensive Life, Health &amp; Motor insurance plans powered by smart fintech. Simple, transparent, and built around you.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Get a Free Quote</a>
+      <a href="#calc" class="btn-outline">Try Our Calculator</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item"><div class="num">2L+</div><div class="lbl">Customers Protected</div></div>
+      <div class="stat-item"><div class="num">&#8377;500Cr+</div><div class="lbl">Claims Settled</div></div>
+      <div class="stat-item"><div class="num">98.6%</div><div class="lbl">Claim Settlement Ratio</div></div>
+      <div class="stat-item"><div class="num">50+</div><div class="lbl">Insurance Plans</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <div class="section-inner">
+    <div class="section-tag">Our Products</div>
+    <h2 class="section-title">Insurance Plans for Every Need</h2>
+    <p class="section-sub">Tailored coverage options to protect your life, health, and vehicles — all under one roof.</p>
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-icon icon-life">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 19s-7-4.5-7-10a7 7 0 0114 0c0 5.5-7 10-7 10z" fill="#E8400A" opacity="0.8"/><path d="M8 10h6M11 7v6" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Life Insurance</h3>
+        <p>Secure your family's future with flexible term and whole life plans tailored to your goals.</p>
+        <ul class="feature-list">
+          <li>Term plans from &#8377;500/month</li>
+          <li>Sum assured up to &#8377;5 Crore</li>
+          <li>Tax benefits under Sec 80C</li>
+          <li>Critical illness add-on rider</li>
+        </ul>
+        <a href="#contact" class="learn-btn">Enquire Now &rarr;</a>
+      </div>
+      <div class="product-card">
+        <div class="product-icon icon-health">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="3" width="16" height="16" rx="4" fill="#0EA5E9" opacity="0.8"/><path d="M11 7v8M7 11h8" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Health Insurance</h3>
+        <p>Comprehensive medical coverage for individuals and families including cashless hospitalization.</p>
+        <ul class="feature-list">
+          <li>Cashless at 10,000+ hospitals</li>
+          <li>No pre-policy medical checkup</li>
+          <li>OPD &amp; mental health cover</li>
+          <li>Family floater plans available</li>
+        </ul>
+        <a href="#contact" class="learn-btn" style="color:#0EA5E9">Enquire Now &rarr;</a>
+      </div>
+      <div class="product-card">
+        <div class="product-icon icon-motor">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="8" width="18" height="9" rx="3" fill="#10B981" opacity="0.8"/><circle cx="6" cy="17" r="2.5" fill="#065F46"/><circle cx="16" cy="17" r="2.5" fill="#065F46"/><path d="M6 8l2-4h6l2 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Motor Insurance</h3>
+        <p>Complete protection for your car and two-wheeler with instant policy issuance and fast claims.</p>
+        <ul class="feature-list">
+          <li>Third-party &amp; comprehensive cover</li>
+          <li>Zero depreciation add-on</li>
+          <li>24/7 roadside assistance</li>
+          <li>Instant online renewal</li>
+        </ul>
+        <a href="#contact" class="learn-btn" style="color:#10B981">Enquire Now &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-us" id="why">
+  <div class="section-inner">
+    <div class="section-tag">Why INFI FINSURE</div>
+    <h2 class="section-title">Why Thousands Trust Us</h2>
+    <p class="section-sub">We make insurance simple, fast, and transparent — no jargon, no hidden fees.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 3l2 5h5l-4 3 1.5 5L11 13l-4.5 3L8 11 4 8h5z" fill="#E8400A"/></svg></div>
+        <h4>Instant Issuance</h4><p>Get your policy in minutes, 100% online, zero paperwork.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="4" y="3" width="14" height="16" rx="3" fill="#E8400A" opacity="0.15"/><path d="M8 8h6M8 11h6M8 14h4" stroke="#E8400A" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <h4>Transparent Pricing</h4><p>No hidden charges. What you see is what you pay.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M5 12l4 4 8-8" stroke="#E8400A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h4>Fast Claims</h4><p>98.6% settlement ratio, most claims in 24 hours.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M5 4h12a2 2 0 012 2v8a2 2 0 01-2 2H8l-4 3V6a2 2 0 012-2z" fill="#E8400A" opacity="0.15" stroke="#E8400A" stroke-width="1.5"/></svg></div>
+        <h4>24/7 Support</h4><p>Expert advisors available via call, chat or WhatsApp.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="calculator" id="calc">
+  <div class="section-inner">
+    <div class="section-tag">Investment Calculator</div>
+    <h2 class="section-title">Plan Your Financial Future</h2>
+    <p class="section-sub">Estimate your premium or investment returns with our smart fintech calculators.</p>
+    <div class="calc-wrap">
+      <div class="calc-tabs">
+        <button class="calc-tab active" onclick="switchTab('life',this)">Life Cover</button>
+        <button class="calc-tab" onclick="switchTab('health',this)">Health Cover</button>
+        <button class="calc-tab" onclick="switchTab('invest',this)">Investment Return</button>
+      </div>
+      <!-- Life -->
+      <div id="calc-life">
+        <div class="calc-grid">
+          <div class="calc-field"><label>Your Age</label><div class="range-val" id="age-val">30 years</div><input type="range" min="18" max="60" value="30" step="1" oninput="document.getElementById('age-val').textContent=this.value+' years';calcLife()"></div>
+          <div class="calc-field"><label>Sum Assured (&#8377; Lakhs)</label><div class="range-val" id="sa-val">&#8377;50 Lakhs</div><input type="range" min="10" max="500" value="50" step="10" oninput="document.getElementById('sa-val').textContent='&#8377;'+this.value+' Lakhs';calcLife()"></div>
+          <div class="calc-field"><label>Policy Term (Years)</label><div class="range-val" id="term-val">20 years</div><input type="range" min="5" max="40" value="20" step="1" oninput="document.getElementById('term-val').textContent=this.value+' years';calcLife()"></div>
+          <div class="calc-field"><label>Smoker?</label><div class="range-val" id="smoke-val">Non-Smoker</div><input type="range" min="0" max="1" value="0" step="1" oninput="document.getElementById('smoke-val').textContent=this.value=='0'?'Non-Smoker':'Smoker';calcLife()"></div>
+        </div>
+        <div class="calc-result">
+          <div><div class="res-num" id="r-premium">&#8377;890</div><div class="res-lbl">Monthly Premium</div></div>
+          <div><div class="res-num" id="r-annual">&#8377;10,680</div><div class="res-lbl">Annual Premium</div></div>
+          <div><div class="res-num" id="r-total">&#8377;2.14L</div><div class="res-lbl">Total Outflow</div></div>
+        </div>
+        <p class="calc-note">* Indicative premium. Actual premium subject to medical underwriting.</p>
+      </div>
+      <!-- Health -->
+      <div id="calc-health" style="display:none">
+        <div class="calc-grid">
+          <div class="calc-field"><label>Number of Members</label><div class="range-val" id="mem-val">2 members</div><input type="range" min="1" max="6" value="2" step="1" oninput="document.getElementById('mem-val').textContent=this.value+' member'+(this.value>1?'s':'');calcHealth()"></div>
+          <div class="calc-field"><label>Cover Amount (&#8377; Lakhs)</label><div class="range-val" id="hsa-val">&#8377;5 Lakhs</div><input type="range" min="3" max="50" value="5" step="1" oninput="document.getElementById('hsa-val').textContent='&#8377;'+this.value+' Lakhs';calcHealth()"></div>
+          <div class="calc-field"><label>Eldest Member Age</label><div class="range-val" id="hage-val">35 years</div><input type="range" min="18" max="65" value="35" step="1" oninput="document.getElementById('hage-val').textContent=this.value+' years';calcHealth()"></div>
+          <div class="calc-field"><label>Plan Type</label><div class="range-val" id="hplan-val">Standard</div><input type="range" min="0" max="1" value="0" step="1" oninput="document.getElementById('hplan-val').textContent=this.value=='0'?'Standard':'Premium';calcHealth()"></div>
+        </div>
+        <div class="calc-result">
+          <div><div class="res-num" id="rh-monthly">&#8377;1,250</div><div class="res-lbl">Monthly Premium</div></div>
+          <div><div class="res-num" id="rh-annual">&#8377;15,000</div><div class="res-lbl">Annual Premium</div></div>
+          <div><div class="res-num" id="rh-cover">&#8377;5L</div><div class="res-lbl">Sum Insured</div></div>
+        </div>
+        <p class="calc-note">* Indicative premium. Pre-existing conditions may affect pricing.</p>
+      </div>
+      <!-- Invest -->
+      <div id="calc-invest" style="display:none">
+        <div class="calc-grid">
+          <div class="calc-field"><label>Monthly Investment (&#8377;)</label><div class="range-val" id="inv-val">&#8377;5,000</div><input type="range" min="500" max="50000" value="5000" step="500" oninput="document.getElementById('inv-val').textContent='&#8377;'+Number(this.value).toLocaleString('en-IN');calcInvest()"></div>
+          <div class="calc-field"><label>Expected Return (%)</label><div class="range-val" id="ret-val">10%</div><input type="range" min="6" max="18" value="10" step="1" oninput="document.getElementById('ret-val').textContent=this.value+'%';calcInvest()"></div>
+          <div class="calc-field"><label>Time Period (Years)</label><div class="range-val" id="yr-val">15 years</div><input type="range" min="1" max="40" value="15" step="1" oninput="document.getElementById('yr-val').textContent=this.value+' years';calcInvest()"></div>
+          <div class="calc-field"><label>Annual Step-up (%)</label><div class="range-val" id="step-val">5%</div><input type="range" min="0" max="20" value="5" step="1" oninput="document.getElementById('step-val').textContent=this.value+'%';calcInvest()"></div>
+        </div>
+        <div class="calc-result">
+          <div><div class="res-num" id="ri-invested">&#8377;9L</div><div class="res-lbl">Total Invested</div></div>
+          <div><div class="res-num" id="ri-returns">&#8377;15.8L</div><div class="res-lbl">Estimated Returns</div></div>
+          <div><div class="res-num" id="ri-corpus">&#8377;24.8L</div><div class="res-lbl">Maturity Corpus</div></div>
+        </div>
+        <p class="calc-note">* Projections are indicative. Actual returns may vary based on market conditions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="customer-form" id="contact">
+  <div class="section-inner">
+    <div class="section-tag">Get a Quote</div>
+    <h2 class="section-title">Tell Us What You Need</h2>
+    <p class="section-sub">Fill in your details and our expert Ravi Aralikatti will reach out within 2 hours with a personalised plan.</p>
+    <div class="form-card">
+      <form onsubmit="submitForm(event)">
+        <div class="form-grid">
+          <div class="form-group"><label>Full Name *</label><input type="text" placeholder="Rahul Sharma" required></div>
+          <div class="form-group"><label>Mobile Number *</label><input type="tel" placeholder="+91 98765 43210" required></div>
+          <div class="form-group"><label>Email Address</label><input type="email" placeholder="rahul@email.com"></div>
+          <div class="form-group"><label>City</label><input type="text" placeholder="Bengaluru"></div>
+          <div class="form-group"><label>Insurance Type *</label>
+            <select required><option value="">Select insurance type</option><option>Life Insurance</option><option>Health Insurance</option><option>Motor Insurance</option><option>All of the above</option></select>
+          </div>
+          <div class="form-group"><label>Coverage Amount</label>
+            <select><option value="">Select coverage</option><option>Up to &#8377;25 Lakhs</option><option>&#8377;25L &ndash; &#8377;1 Crore</option><option>&#8377;1 Crore &ndash; &#8377;5 Crore</option><option>Above &#8377;5 Crore</option></select>
+          </div>
+          <div class="form-group"><label>Age</label><input type="number" placeholder="30" min="18" max="99"></div>
+          <div class="form-group"><label>Annual Income</label>
+            <select><option value="">Select income range</option><option>Below &#8377;5 LPA</option><option>&#8377;5L &ndash; &#8377;10 LPA</option><option>&#8377;10L &ndash; &#8377;25 LPA</option><option>Above &#8377;25 LPA</option></select>
+          </div>
+          <div class="form-group full"><label>Additional Requirements</label><textarea placeholder="E.g. I want a plan with critical illness cover for my family of 4 including parents..."></textarea></div>
+          <div class="form-group full">
+            <button type="submit" class="submit-btn">Request Free Consultation &rarr;</button>
+            <div class="form-success" id="form-success">&#10003; Thank you! Our advisor Ravi Aralikatti will call you at 9241414242 within 2 hours.</div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#home" class="footer-logo-wrap">
+          <div class="footer-logo-icon">
+            <svg width="20" height="20" viewBox="0 0 22 22" fill="none">
+              <rect x="2" y="11" width="4" height="9" rx="1.5" fill="white" opacity="0.6"/>
+              <rect x="9" y="6" width="4" height="14" rx="1.5" fill="white" opacity="0.85"/>
+              <rect x="16" y="2" width="4" height="18" rx="1.5" fill="white"/>
+            </svg>
+          </div>
+          <div>
+            <div class="footer-logo-text">INFI <span>FINSURE</span></div>
+            <div style="font-size:10px;color:rgba(255,255,255,0.3);letter-spacing:1.5px;font-weight:500">FINTECH SOLUTIONS</div>
+          </div>
+        </a>
+        <p class="footer-brand-desc">Smart insurance for every Indian. Powered by fintech, driven by trust. IRDAI Registered Broker.</p>
+        <div class="social-row">
+          <a href="#" class="social-btn" aria-label="Facebook">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9.5 2H8C6.895 2 6 2.895 6 4v1H4.5v2H6v5h2V7h1.5L10 5H8V4c0-.276.224-.5.5-.5H9.5V2z" fill="rgba(255,255,255,0.45)"/></svg>
+          </a>
+          <a href="#" class="social-btn" aria-label="Twitter">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M13 2.5a5.5 5.5 0 01-1.6.44A2.78 2.78 0 0012.67 1a5.54 5.54 0 01-1.77.68A2.77 2.77 0 007 4.03c0 .22.02.43.07.63A7.86 7.86 0 011.64 1.5a2.77 2.77 0 00.86 3.7A2.74 2.74 0 011.25 5v.03a2.77 2.77 0 002.22 2.72 2.8 2.8 0 01-.73.1 2.6 2.6 0 01-.52-.05 2.77 2.77 0 002.59 1.92A5.56 5.56 0 011 11.1 7.83 7.83 0 005.23 12.5c5.08 0 7.86-4.21 7.86-7.86l-.01-.36A5.62 5.62 0 0014 2.8 5.5 5.5 0 0113 2.5z" fill="rgba(255,255,255,0.45)"/></svg>
+          </a>
+          <a href="https://wa.me/919241414242" class="social-btn" aria-label="WhatsApp" target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1C3.686 1 1 3.686 1 7c0 1.07.27 2.08.74 2.96L1 13l3.12-.73A5.97 5.97 0 007 13c3.314 0 6-2.686 6-6S10.314 1 7 1zm0 10.5c-.93 0-1.8-.27-2.53-.73l-.18-.11-1.85.43.45-1.8-.12-.19A4.48 4.48 0 012.5 7c0-2.485 2.015-4.5 4.5-4.5S11.5 4.515 11.5 7 9.485 11.5 7 11.5zm2.47-3.34c-.13-.07-.78-.39-.9-.43-.12-.04-.21-.07-.3.07-.09.13-.34.43-.42.52-.07.09-.15.1-.28.03-.13-.07-.55-.2-1.05-.64a3.96 3.96 0 01-.73-.9c-.07-.13 0-.2.06-.27l.2-.23c.06-.07.08-.13.12-.22.04-.09.02-.17-.01-.24-.03-.07-.3-.72-.41-.98-.1-.26-.21-.22-.3-.22h-.25c-.09 0-.24.03-.36.17-.12.13-.47.46-.47 1.12s.48 1.3.55 1.39c.07.09.95 1.45 2.3 2.03.32.14.57.22.77.28.32.1.62.09.85.05.26-.04.8-.33.91-.64.11-.32.11-.59.08-.64-.03-.06-.12-.09-.25-.16z" fill="rgba(255,255,255,0.45)"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>QUICK LINKS</h5>
+        <ul>
+          <li><a href="#products">Life Insurance</a></li>
+          <li><a href="#products">Health Insurance</a></li>
+          <li><a href="#products">Motor Insurance</a></li>
+          <li><a href="#calc">Investment Calculator</a></li>
+          <li><a href="#contact">Claim Support</a></li>
+          <li><a href="#why">About Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>CONTACT US</h5>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2 2h4l1.5 3.5-2 1.2c.9 1.8 2.3 3.2 4.1 4.1L10.8 9 14 10.5V14a1 1 0 01-1 1C5.163 14.5.5 9.837.5 4A1 1 0 011.5 3H2z" fill="#FF6B35"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">MOBILE</div>
+            <div class="contact-val">+91 9241414242</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M1 3a1 1 0 011-1h10a1 1 0 011 1v.5l-6 4-6-4V3zm0 2l6 4 6-4V11a1 1 0 01-1 1H2a1 1 0 01-1-1V5z" fill="#FF6B35"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">EMAIL</div>
+            <div class="contact-val">ravi@infifinsure.com</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M7 1C4.791 1 3 2.791 3 5c0 3.25 4 8 4 8s4-4.75 4-8c0-2.209-1.791-4-4-4zm0 5.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" fill="#FF6B35"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">ADDRESS</div>
+            <div class="contact-val">Yelchenahalli, Bangalore</div>
+          </div>
+        </div>
+        <div class="advisor-card">
+          <div class="advisor-tag">YOUR ADVISOR</div>
+          <div class="advisor-name">Ravi Aralikatti</div>
+          <div class="advisor-role">Insurance &amp; Fintech Advisor</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 INFI FINSURE Pvt. Ltd. | IRDAI Reg. No. XXXXX | All rights reserved</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">IRDAI Disclosure</a>
+        <a href="#">Grievance Redressal</a>
+      </div>
+    </div>
+    <p class="footer-disclaimer">Insurance is the subject matter of solicitation. Please read the policy terms carefully before purchasing.</p>
+  </div>
+</footer>
+
+<!-- WhatsApp Float Button -->
+<a href="https://wa.me/919241414242" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+    <path d="M14 2C7.373 2 2 7.373 2 14c0 2.14.54 4.16 1.48 5.92L2 26l4.22-1.46A11.93 11.93 0 0014 26c6.627 0 12-5.373 12-12S20.627 2 14 2zm0 21c-1.86 0-3.6-.54-5.06-1.46l-.36-.22-3.7.86.9-3.6-.24-.38A8.96 8.96 0 015 14c0-4.963 4.037-9 9-9s9 4.037 9 9-4.037 9-9 9zm4.94-6.68c-.26-.14-1.56-.78-1.8-.86-.24-.08-.42-.14-.6.14-.18.26-.68.86-.84 1.04-.14.18-.3.2-.56.06-.26-.14-1.1-.4-2.1-1.28a7.92 7.92 0 01-1.46-1.8c-.14-.26 0-.4.12-.54l.4-.46c.12-.14.16-.26.24-.44.08-.18.04-.34-.02-.48-.06-.14-.6-1.44-.82-1.96-.2-.52-.42-.44-.6-.44h-.5c-.18 0-.48.06-.72.34-.24.26-.94.92-.94 2.24s.96 2.6 1.1 2.78c.14.18 1.9 2.9 4.6 4.06.64.28 1.14.44 1.54.56.64.2 1.24.18 1.7.1.52-.08 1.6-.66 1.82-1.28.22-.64.22-1.18.16-1.28-.06-.12-.24-.18-.5-.32z" fill="white"/>
+  </svg>
+</a>
+
+<script>
+function toggleNav(){document.getElementById('nav-links').classList.toggle('open')}
+
+function switchTab(tab,el){
+  document.querySelectorAll('.calc-tab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  ['calc-life','calc-health','calc-invest'].forEach(id=>document.getElementById(id).style.display='none');
+  document.getElementById('calc-'+tab).style.display='block';
+}
+
+function fmt(n){
+  if(n>=10000000)return'\u20B9'+(n/10000000).toFixed(2)+'Cr';
+  if(n>=100000)return'\u20B9'+(n/100000).toFixed(1)+'L';
+  return'\u20B9'+Math.round(n).toLocaleString('en-IN');
+}
+
+function calcLife(){
+  var s=document.querySelectorAll('#calc-life input[type=range]');
+  var age=+s[0].value,sa=+s[1].value*100000,term=+s[2].value,smoke=+s[3].value;
+  var monthly=Math.round(sa*0.00015*(1+(age-18)*0.03)*(smoke?1.5:1)/12);
+  var annual=monthly*12;
+  document.getElementById('r-premium').textContent='\u20B9'+monthly.toLocaleString('en-IN');
+  document.getElementById('r-annual').textContent='\u20B9'+annual.toLocaleString('en-IN');
+  document.getElementById('r-total').textContent=fmt(annual*term);
+}
+
+function calcHealth(){
+  var s=document.querySelectorAll('#calc-health input[type=range]');
+  var mem=+s[0].value,sa=+s[1].value*100000,age=+s[2].value,prem=+s[3].value;
+  var annual=Math.round(sa*0.025*(mem*0.6)*(1+(age-18)*0.02)*(prem?1.4:1));
+  document.getElementById('rh-monthly').textContent='\u20B9'+Math.round(annual/12).toLocaleString('en-IN');
+  document.getElementById('rh-annual').textContent='\u20B9'+annual.toLocaleString('en-IN');
+  document.getElementById('rh-cover').textContent=fmt(sa);
+}
+
+function calcInvest(){
+  var s=document.querySelectorAll('#calc-invest input[type=range]');
+  var monthly=+s[0].value,rate=+s[1].value/100/12,years=+s[2].value,stepup=+s[3].value/100;
+  var n=years*12,corpus=0,invested=0,m=monthly;
+  for(var i=0;i<n;i++){if(i>0&&i%12===0)m*=(1+stepup);corpus=(corpus+m)*(1+rate);invested+=m;}
+  document.getElementById('ri-invested').textContent=fmt(invested);
+  document.getElementById('ri-returns').textContent=fmt(corpus-invested);
+  document.getElementById('ri-corpus').textContent=fmt(corpus);
+}
+
+function submitForm(e){
+  e.preventDefault();
+  document.getElementById('form-success').style.display='block';
+  e.target.reset();
+}
+
+calcLife();calcHealth();calcInvest();
+</script>
+</body>
+</html>
